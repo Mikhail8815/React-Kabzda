@@ -1,8 +1,7 @@
-
+import { UncontrolledOnOff } from './UncontrolledOnOff'
 import React, {useState} from "react";
 import { action } from '@storybook/addon-actions'
 import {ratingValueType} from "../../App";
-import {UncontrolledOnOff} from "./UncontrolledOnOff";
 
 export default {
     title: 'UncontrolledOnOff stories',

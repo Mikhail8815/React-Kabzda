@@ -7,6 +7,9 @@ export default {
     component: UncontrolledAccordion,
 };
 
+
+const onChangeHandler = action('onChange')
+
 export const UncontrolledAccordionDemo = () => {
   return  <UncontrolledAccordion
         title={'Menu'}/>

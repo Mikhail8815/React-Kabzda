@@ -1,17 +1,24 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from "react";
+import {reducer, TOGGLE_COLLAPSED} from "./reducer";
+
+
 
 type AccordionProps = {
     title: string;
 }
+
 export function UncontrolledAccordion(props: AccordionProps) {
-    const [collapsed, setCollapsed] = useState(false)
-    const onclickHandler = () => {
-        setCollapsed(!collapsed)
-    }
+
+    // const [collapsed, setCollapsed] = useState(false)
+    let [state, dispatch] = useReducer(reducer, {collapsed: false})
+
+    // const onclickHandler = () => {
+    //     setCollapsed(!collapsed)
+    // }
         return (
             <>
-                <AccordionTitle title={props.title} onClick={onclickHandler} />
-                {!collapsed && <AccordionBody/>}
+                <AccordionTitle title={props.title} onClick={()=>dispatch({type: TOGGLE_COLLAPSED})} />
+                {!state.collapsed && <AccordionBody/>}
             </>
         )
 }

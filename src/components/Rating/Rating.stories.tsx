@@ -9,6 +9,8 @@ export default {
     component: Rating
 };
 
+const onChangeHandler = action('onChange')
+
 export const EmptyRating = () => <Rating value={0} onClick={x=>x}/>
 export const Rating1 = () => <Rating value={1} onClick={x=>x}/>
 export const Rating2 = () => <Rating value={2} onClick={x=>x}/>
